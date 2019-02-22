@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CascadingDropDownApp.Models.Division>
+
+@{
+    ViewBag.Title = "ShowDivision";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowDivision</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddDivision")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Country.CountryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DivisionCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DivisionName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country.CountryCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DivisionCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DivisionName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DivisionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DivisionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DivisionId })
+        </td>
+    </tr>
+}
+
+</table>
