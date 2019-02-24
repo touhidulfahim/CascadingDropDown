@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CascadingDropDownApp.Models.UnionParishad>
+
+@{
+    ViewBag.Title = "ViewUnionParishad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewUnionParishad</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddUnionParishad")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Upazila.UpazilaCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnionParishadCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnionParishadName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Upazila.UpazilaCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnionParishadCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnionParishadName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UnionParishadId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UnionParishadId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UnionParishadId })
+        </td>
+    </tr>
+}
+
+</table>

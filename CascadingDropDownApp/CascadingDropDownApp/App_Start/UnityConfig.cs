@@ -47,6 +47,9 @@ namespace CascadingDropDownApp
 
             container.RegisterType<ICountry, CountryRepository>();
             container.RegisterType<IDivision, DivisionRepository>();
+            container.RegisterType<IDistrict, DistrictRepository>();
+            container.RegisterType<IUpazila, UpazilaRepository>();
+            container.RegisterType<IUnionParishad, UnionParishadRepository>();
         }
     }
 }

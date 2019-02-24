@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CascadingDropDownApp.Models.District>
+
+@{
+    ViewBag.Title = "ViewDistrict";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewDistrict</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddDistrict")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Division.DivisionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Division.DivisionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DistrictId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DistrictId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DistrictId })
+        </td>
+    </tr>
+}
+
+</table>
