@@ -20,6 +20,7 @@ namespace CascadingDropDownApp.Gateway
         public DbSet<District> Districts { get; set; }
         public DbSet<Upazila> Upazilas { get; set; }
         public DbSet<UnionParishad> UnionParishads { get; set; }
+        public DbSet<BookingTicket> BookingTickets { get; set; }
 
 
 

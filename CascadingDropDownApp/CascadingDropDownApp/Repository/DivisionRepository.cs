@@ -97,5 +97,15 @@ namespace CascadingDropDownApp.Repository
                 throw;
             }
         }
+
+        public List<Division> GetBdDivision()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Division> GetIndianCity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

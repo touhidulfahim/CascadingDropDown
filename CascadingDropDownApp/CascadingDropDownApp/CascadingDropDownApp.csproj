@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\BookingTicketsController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -174,7 +175,12 @@
     <Compile Include="Migrations\201902221722158_PopulateCountry.Designer.cs">
       <DependentUpon>201902221722158_PopulateCountry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903010704474_AddBookingticketsModels.cs" />
+    <Compile Include="Migrations\201903010704474_AddBookingticketsModels.Designer.cs">
+      <DependentUpon>201903010704474_AddBookingticketsModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BookingTicket.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
@@ -239,6 +245,11 @@
     <Content Include="Views\Upazila\AddUpazila.cshtml" />
     <Content Include="Views\UnionParishad\ViewUnionParishad.cshtml" />
     <Content Include="Views\UnionParishad\AddUnionParishad.cshtml" />
+    <Content Include="Views\BookingTickets\Create.cshtml" />
+    <Content Include="Views\BookingTickets\Delete.cshtml" />
+    <Content Include="Views\BookingTickets\Details.cshtml" />
+    <Content Include="Views\BookingTickets\Edit.cshtml" />
+    <Content Include="Views\BookingTickets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902221722158_PopulateCountry.resx">
       <DependentUpon>201902221722158_PopulateCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903010704474_AddBookingticketsModels.resx">
+      <DependentUpon>201903010704474_AddBookingticketsModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

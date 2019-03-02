@@ -13,5 +13,7 @@ namespace CascadingDropDownApp.Interface
         int? SaveDivision(Division division);
         bool CheckDivisionCodeExists(string divisioncode);
         bool CheckDivisionNameExists(string divisionname);
+        List<Division> GetBdDivision();
+        List<Division> GetIndianCity();
     }
 }

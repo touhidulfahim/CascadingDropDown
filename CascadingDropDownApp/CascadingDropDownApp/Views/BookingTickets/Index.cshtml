@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CascadingDropDownApp.Models.BookingTicket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            DEPARTURE
+        </th>
+        <th>
+            ARRIVAL
+        </th>
+        <th>
+            PASSENGER
+        </th>
+        <th>
+           MOBILE
+        </th>
+        <th>
+            BOOKING DATE
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictFrom.DistrictName)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistrictTo.DistrictName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassengerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDate)
+        </td>
+    </tr>
+}
+
+</table>

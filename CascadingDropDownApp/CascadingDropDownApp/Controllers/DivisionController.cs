@@ -80,5 +80,17 @@ namespace CascadingDropDownApp.Controllers
                 throw;
             }
         }
+
+        public JsonResult GetAllBdDivision()
+        {
+            var bdDivision = _iDivision.GetBdDivision();
+            return Json(bdDivision, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetAllIndianDivision()
+        {
+            var inDivison = _iDivision.GetIndianCity();
+            return Json(inDivison, JsonRequestBehavior.AllowGet);
+        }
     }
 }

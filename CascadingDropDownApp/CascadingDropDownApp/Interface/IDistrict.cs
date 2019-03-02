@@ -13,5 +13,9 @@ namespace CascadingDropDownApp.Interface
         int? SaveDistrict(District district);
         bool CheckDistrictNameExists(string districtname);
         bool CheckDistrictCodeExists(string districtcode);
+        List<District> GetAllCtgDistrict();
+        List<District> GetAllDhkDistrict();
+
+        List<District> GetDistrictInfosByDistrictId(int districtId);
     }
 }

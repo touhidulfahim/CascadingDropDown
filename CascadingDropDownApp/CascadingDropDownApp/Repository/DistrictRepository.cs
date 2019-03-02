@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Web;
+using System.Web.Mvc.Html;
 using CascadingDropDownApp.Gateway;
 using CascadingDropDownApp.Interface;
 using CascadingDropDownApp.Models;
@@ -94,6 +95,31 @@ namespace CascadingDropDownApp.Repository
             {
                 throw;
             }
+        }
+
+        public List<District> GetAllCtgDistrict()
+        {
+            var ctgDis = _context.Districts.Where(d => d.Division.DivisionName == "CHATTAGRAM");
+            return ctgDis.ToList();
+        }
+        public List<District> GetAllDhkDistrict()
+        {
+            var dhkDis = _context.Districts.Where(d => d.Division.DivisionName == "DHAKA");
+            return dhkDis.ToList();
+        }
+
+        public List<District> GetDistrictInfosByDistrictId(int districtId)
+        {
+            //var query = from states in _context.District
+            //    where states.CountryId == countryId
+            //    select states;
+            //var content = query.ToList<State>();
+
+            var query = from dis in _context.Districts
+                where dis.DistrictId == districtId
+                select dis;
+            var content = query.ToList<District>();
+            return content;
         }
     }
 }
