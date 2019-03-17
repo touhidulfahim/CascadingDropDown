@@ -153,6 +153,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\BookingTicketsController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,9 +180,15 @@
     <Compile Include="Migrations\201903010704474_AddBookingticketsModels.Designer.cs">
       <DependentUpon>201903010704474_AddBookingticketsModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903171720358_AddCustomernCustomerAddressModels.cs" />
+    <Compile Include="Migrations\201903171720358_AddCustomernCustomerAddressModels.Designer.cs">
+      <DependentUpon>201903171720358_AddCustomernCustomerAddressModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BookingTicket.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\CustomerAddressModels.cs" />
+    <Compile Include="Models\CustomerModels.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\UnionParishad.cs" />
@@ -250,6 +257,11 @@
     <Content Include="Views\BookingTickets\Details.cshtml" />
     <Content Include="Views\BookingTickets\Edit.cshtml" />
     <Content Include="Views\BookingTickets\Index.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903010704474_AddBookingticketsModels.resx">
       <DependentUpon>201903010704474_AddBookingticketsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903171720358_AddCustomernCustomerAddressModels.resx">
+      <DependentUpon>201903171720358_AddCustomernCustomerAddressModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

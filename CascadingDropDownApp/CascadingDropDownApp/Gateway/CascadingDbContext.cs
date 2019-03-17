@@ -21,7 +21,8 @@ namespace CascadingDropDownApp.Gateway
         public DbSet<Upazila> Upazilas { get; set; }
         public DbSet<UnionParishad> UnionParishads { get; set; }
         public DbSet<BookingTicket> BookingTickets { get; set; }
-
+        public DbSet<CustomerModels> Customers { get; set; }
+        public DbSet<CustomerAddressModels> CustomerAddresses { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
