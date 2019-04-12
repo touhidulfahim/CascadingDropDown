@@ -153,6 +153,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\BookingTicketsController.cs" />
+    <Compile Include="Controllers\CustomerAddressController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
@@ -164,6 +165,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interface\ICountry.cs" />
+    <Compile Include="Interface\ICustomerAddress.cs" />
     <Compile Include="Interface\IDistrict.cs" />
     <Compile Include="Interface\IDivision.cs" />
     <Compile Include="Interface\IUnionParishad.cs" />
@@ -184,6 +186,10 @@
     <Compile Include="Migrations\201903171720358_AddCustomernCustomerAddressModels.Designer.cs">
       <DependentUpon>201903171720358_AddCustomernCustomerAddressModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903251111157_UpdateCustomerAddressModels.cs" />
+    <Compile Include="Migrations\201903251111157_UpdateCustomerAddressModels.Designer.cs">
+      <DependentUpon>201903251111157_UpdateCustomerAddressModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BookingTicket.cs" />
     <Compile Include="Models\Country.cs" />
@@ -195,6 +201,7 @@
     <Compile Include="Models\Upazila.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CountryRepository.cs" />
+    <Compile Include="Repository\CustomerAddressRepository.cs" />
     <Compile Include="Repository\DistrictRepository.cs" />
     <Compile Include="Repository\DivisionRepository.cs" />
     <Compile Include="Repository\UnionParishadRepository.cs" />
@@ -262,6 +269,11 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\CustomerAddress\Create.cshtml" />
+    <Content Include="Views\CustomerAddress\Delete.cshtml" />
+    <Content Include="Views\CustomerAddress\Details.cshtml" />
+    <Content Include="Views\CustomerAddress\Edit.cshtml" />
+    <Content Include="Views\CustomerAddress\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903171720358_AddCustomernCustomerAddressModels.resx">
       <DependentUpon>201903171720358_AddCustomernCustomerAddressModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903251111157_UpdateCustomerAddressModels.resx">
+      <DependentUpon>201903251111157_UpdateCustomerAddressModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -50,6 +50,7 @@ namespace CascadingDropDownApp
             container.RegisterType<IDistrict, DistrictRepository>();
             container.RegisterType<IUpazila, UpazilaRepository>();
             container.RegisterType<IUnionParishad, UnionParishadRepository>();
+            container.RegisterType<ICustomerAddress, CustomerAddressRepository>();
         }
     }
 }

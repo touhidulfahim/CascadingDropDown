@@ -1,0 +1,155 @@
+﻿@model CascadingDropDownApp.Models.CustomerAddressModels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerAddressModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentCountry.CountryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentCountry.CountryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentDistrict.DistrictCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentDistrict.DistrictCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentDivision.DivisionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentDivision.DivisionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentUnionParishad.UnionParishadCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentUnionParishad.UnionParishadCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentUpazilla.UpazilaCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentUpazilla.UpazilaCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentCountry.CountryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentCountry.CountryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentDistrict.DistrictCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentDistrict.DistrictCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentDivision.DivisionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentDivision.DivisionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentUnionParishad.UnionParishadCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentUnionParishad.UnionParishadCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentUpazila.UpazilaCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentUpazila.UpazilaCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentRoadNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentRoadNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentVillage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentVillage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentRoadNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentRoadNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PermanentVillage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentVillage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerAddressId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

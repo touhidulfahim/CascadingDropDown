@@ -1,0 +1,363 @@
+﻿@model CascadingDropDownApp.Models.CustomerAddressModels
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="container">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="CustomerId">CUSTOMER</label>
+                            @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentCountryId">COUNTRY</label>
+                            @Html.DropDownListFor(model => model.PresentCountryId, new SelectList(@ViewBag.PresentCountryId, "CountryId", "CountryName"), "SELECT COUNTRY", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PresentCountryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentDivisionId">DIVISION</label>
+                            <select id="PresentDivisionId" name="PresentDivisionId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PresentDivisionId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentDistrictId">DISTRICT</label>
+                            <select id="PresentDistrictId" name="PresentDistrictId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PresentDistrictId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentUpazilaId">UPAZILLA</label>
+                            <select id="PresentUpazilaId" name="PresentUpazilaId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PresentUpazilaId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentUnionParishadId">UNION</label>
+                            <select id="PresentUnionParishadId" name="PresentUnionParishadId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PresentUnionParishadId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentHome">HOME</label>
+                            @Html.EditorFor(model => model.PresentHome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresentHome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentRoadNo">ROAD NO/ WARD NO</label>
+                            @Html.EditorFor(model => model.PresentRoadNo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresentRoadNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PresentVillage">VILLAGE/AREA</label>
+                            @Html.EditorFor(model => model.PresentVillage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PresentVillage, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentCountryId">COUNTRY</label>
+                            @Html.DropDownListFor(model => model.PermanentCountryId, new SelectList(@ViewBag.PermanentCountryId, "CountryId", "CountryName"), "SELECT COUNTRY", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PermanentCountryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentDivisionId">DIVISION</label>
+                            <select id="PermanentDivisionId" name="PermanentDivisionId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PermanentDivisionId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentDistrictId">DISTRICT</label>
+                            <select id="PermanentDistrictId" name="PermanentDistrictId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PermanentDistrictId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentUpazillaId">UPAZILLA</label>
+                            <select id="PermanentUpazillaId" name="PermanentUpazillaId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PermanentUpazillaId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentUnionParishadId">UNION</label>
+                            <select id="PermanentUnionParishadId" name="PermanentUnionParishadId" class="form-control"></select>
+                            @Html.ValidationMessageFor(model => model.PermanentUnionParishadId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentHome">HOME</label>
+                            @Html.EditorFor(model => model.PermanentHome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PermanentHome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentRoadNo">ROAD NO/ WARD NO</label>
+                            @Html.EditorFor(model => model.PermanentRoadNo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PermanentRoadNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="PermanentVillage">VILLAGE/AREA</label>
+                            @Html.EditorFor(model => model.PermanentVillage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PermanentVillage, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+    </div>
+
+}
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script>
+        $(document).ready(function () {
+            //Get Division By Country Start
+            $("#PresentCountryId").change(function() {
+                $("#PresentDivisionId").empty();
+                var prCountry = $("#PresentCountryId").val();
+                var jasonData = { countryId: prCountry };
+                $("#PresentDivisionId").append('<option value=0>SELECT DIVISION</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPresentDivisionByCountryId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PresentDivisionId").append('<option value=' +
+                                    value.DivisionId +
+                                    '>' +
+                                    value.DivisionName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+            });
+            $("#PermanentCountryId").change(function () {
+                $("#PermanentDivisionId").empty();
+                var perCountry = $("#PermanentCountryId").val();
+                var jasonData = { countryId: perCountry };
+                $("#PermanentDivisionId").append('<option value=0>SELECT DIVISION</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPermanentDivisionByCountryId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PermanentDivisionId").append('<option value=' +
+                                    value.DivisionId +
+                                    '>' +
+                                    value.DivisionName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+            });
+            //Get Division By Country End
+
+            //-----------------------------------------------------------District
+
+            //Get District By Division Start
+            $("#PresentDivisionId").change(function () {
+                $("#PresentDistrictId").empty();
+                var preDivision = $("#PresentDivisionId").val();
+                var jasonData = { divisionId: preDivision };
+                $("#PresentDistrictId").append('<option value=0>SELECT DISTRICT</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPresentDistrictByDivisionId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PresentDistrictId").append('<option value=' +
+                                    value.DistrictId +
+                                    '>' +
+                                    value.DistrictName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+            });
+            $("#PermanentDivisionId").change(function () {
+                $("#PermanentDistrictId").empty();
+                var perDivision = $("#PermanentDivisionId").val();
+                var jasonData = { divisionId: perDivision };
+                $("#PermanentDistrictId").append('<option value=0>SELECT DISTRICT</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPermanentDistrictByDivisionId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PermanentDistrictId").append('<option value=' +
+                                    value.DistrictId +
+                                    '>' +
+                                    value.DistrictName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+        });
+            //Get Division By District End
+            //---------------------------------------------Upazila
+            $("#PresentDistrictId").change(function () {
+            $("#PresentUpazilaId").empty();
+                var preDistrict = $("#PresentDistrictId").val();
+            var jasonData = { districtId: preDistrict };
+            $("#PresentUpazilaId").append('<option value=0>SELECT UPAZILA</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPresentUpzillaByDistrictId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PresentUpazilaId").append('<option value=' +
+                                    value.UpazilaId +
+                                    '>' +
+                                    value.UpazilaName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+        });
+        $("#PermanentDistrictId").change(function () {
+            $("#PermanentUpazillaId").empty();
+            var perDistrict = $("#PermanentDistrictId").val();
+            var jasonData = { districtId: perDistrict };
+            $("#PermanentUpazillaId").append('<option value=0>SELECT UPAZILA</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPermanentUpzillaByDistrictId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PermanentUpazillaId").append('<option value=' +
+                                    value.UpazilaId +
+                                    '>' +
+                                    value.UpazilaName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+        });
+            $("#PresentUpazilaId").change(function () {
+                $("#PresentUnionParishadId").empty();
+                var preUpazila = $("#PresentUpazilaId").val();
+                var jasonData = { upazilaId: preUpazila };
+                $("#PresentUnionParishadId").append('<option value=0>SELECT UP</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPresentUnionByUpazillaId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PresentUnionParishadId").append('<option value=' +
+                                    value.UnionParishadId +
+                                    '>' +
+                                    value.UnionParishadName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+        });
+            $("#PermanentUpazillaId").change(function () {
+                $("#PermanentUnionParishadId").empty();
+                var perUpazila = $("#PermanentUpazillaId").val();
+                var jasonData = { upazilaId: perUpazila };
+                $("#PermanentUnionParishadId").append('<option value=0>SELECT UP</option>');
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetPermanentUnionByUpazillaId", "CustomerAddress")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(jasonData),
+                    dataType: "json",
+                    success: function(data) {
+                        $.each(data,
+                            function(key, value) {
+                                $("#PermanentUnionParishadId").append('<option value=' +
+                                    value.UnionParishadId +
+                                    '>' +
+                                    value.UnionParishadName +
+                                    '</option>');
+                            });
+                    }
+
+                });
+        });
+
+    });
+    </script>
+
+}

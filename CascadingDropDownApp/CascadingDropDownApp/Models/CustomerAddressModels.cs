@@ -85,5 +85,8 @@ namespace CascadingDropDownApp.Models
         [ForeignKey("PermanentCountryId")]
         public virtual Country PermanentCountry { get; set; }
 
+        [ForeignKey("CustomerId")]
+        public virtual CustomerModels Customer { get; set; }
+
     }
 }
