@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CascadingDropDownApp.DTO.DepartmentDTO>
+
+@{
+    ViewBag.Title = "ViewDepartmentList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+   Department List
+</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfEntry)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.IsActive)*@
+            @if (item.IsActive)
+            {
+                <p style="color: Green">Active</p>
+            }
+            else
+            {
+                <p>InActive</p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfEntry)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDepartment", new { id=item.DepartmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DepartmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DepartmentId })
+        </td>
+    </tr>
+}
+
+</table>

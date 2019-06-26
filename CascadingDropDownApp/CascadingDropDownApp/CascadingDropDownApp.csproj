@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.7\lib\net451\Dapper.dll</HintPath>
     </Reference>
@@ -64,6 +67,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -155,21 +159,25 @@
     <Compile Include="Controllers\BookingTicketsController.cs" />
     <Compile Include="Controllers\CustomerAddressController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UnionParishadController.cs" />
     <Compile Include="Controllers\UpazilaController.cs" />
+    <Compile Include="DTO\DepartmentDTO.cs" />
     <Compile Include="Gateway\CascadingDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interface\ICountry.cs" />
     <Compile Include="Interface\ICustomerAddress.cs" />
+    <Compile Include="Interface\IDepartment.cs" />
     <Compile Include="Interface\IDistrict.cs" />
     <Compile Include="Interface\IDivision.cs" />
     <Compile Include="Interface\IUnionParishad.cs" />
     <Compile Include="Interface\IUpazila.cs" />
+    <Compile Include="MapperConfig\AutoMapperConfig.cs" />
     <Compile Include="Migrations\201902221708195_Init.cs" />
     <Compile Include="Migrations\201902221708195_Init.Designer.cs">
       <DependentUpon>201902221708195_Init.cs</DependentUpon>
@@ -190,11 +198,16 @@
     <Compile Include="Migrations\201903251111157_UpdateCustomerAddressModels.Designer.cs">
       <DependentUpon>201903251111157_UpdateCustomerAddressModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261400534_AddDepartmentModels.cs" />
+    <Compile Include="Migrations\201906261400534_AddDepartmentModels.Designer.cs">
+      <DependentUpon>201906261400534_AddDepartmentModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BookingTicket.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CustomerAddressModels.cs" />
     <Compile Include="Models\CustomerModels.cs" />
+    <Compile Include="Models\DepartmentModels.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\UnionParishad.cs" />
@@ -202,6 +215,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CountryRepository.cs" />
     <Compile Include="Repository\CustomerAddressRepository.cs" />
+    <Compile Include="Repository\DepartmentRepository.cs" />
     <Compile Include="Repository\DistrictRepository.cs" />
     <Compile Include="Repository\DivisionRepository.cs" />
     <Compile Include="Repository\UnionParishadRepository.cs" />
@@ -274,6 +288,9 @@
     <Content Include="Views\CustomerAddress\Details.cshtml" />
     <Content Include="Views\CustomerAddress\Edit.cshtml" />
     <Content Include="Views\CustomerAddress\Index.cshtml" />
+    <Content Include="Views\Department\AddDepartment.cshtml" />
+    <Content Include="Views\Department\ViewDepartmentList.cshtml" />
+    <Content Include="Views\Department\EditDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903251111157_UpdateCustomerAddressModels.resx">
       <DependentUpon>201903251111157_UpdateCustomerAddressModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261400534_AddDepartmentModels.resx">
+      <DependentUpon>201906261400534_AddDepartmentModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

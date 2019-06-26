@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CascadingDropDownApp.MapperConfig;
 
 namespace CascadingDropDownApp
 {
@@ -12,6 +13,7 @@ namespace CascadingDropDownApp
     {
         protected void Application_Start()
         {
+            AutoMapperConfig.Config();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
