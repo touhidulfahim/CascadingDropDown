@@ -25,8 +25,8 @@ namespace CascadingDropDownApp.Controllers
 
         public ActionResult Index()
         {
-            var bookingTickets = _db.BookingTickets.Include(b => b.DistrictFrom).Include(b => b.DistrictTo);
-            return View(bookingTickets.ToList());
+            //var bookingTickets = _db.BookingTickets.Include(b => b.DistrictFrom).Include(b => b.DistrictTo);
+            return View(); //bookingTickets.ToList());
         }
 
         public JsonResult GetDistrictDetailsByDistrictId(int districtId)
@@ -56,7 +56,7 @@ namespace CascadingDropDownApp.Controllers
             if (ModelState.IsValid)
             {
                 bookingTicket.BookingDate = DateTime.Now;
-                _db.BookingTickets.Add(bookingTicket);
+               // _db.BookingTickets.Add(bookingTicket);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }

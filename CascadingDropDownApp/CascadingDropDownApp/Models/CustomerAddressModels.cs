@@ -87,6 +87,5 @@ namespace CascadingDropDownApp.Models
 
         [ForeignKey("CustomerId")]
         public virtual CustomerModels Customer { get; set; }
-
     }
 }

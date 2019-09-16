@@ -157,12 +157,14 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\BookingTicketsController.cs" />
+    <Compile Include="Controllers\CategoryModelsController.cs" />
     <Compile Include="Controllers\CustomerAddressController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TicketTypeModelsController.cs" />
     <Compile Include="Controllers\UnionParishadController.cs" />
     <Compile Include="Controllers\UpazilaController.cs" />
     <Compile Include="DTO\DepartmentDTO.cs" />
@@ -202,14 +204,20 @@
     <Compile Include="Migrations\201906261400534_AddDepartmentModels.Designer.cs">
       <DependentUpon>201906261400534_AddDepartmentModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909161932597_AddCategoryModels.cs" />
+    <Compile Include="Migrations\201909161932597_AddCategoryModels.Designer.cs">
+      <DependentUpon>201909161932597_AddCategoryModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BookingTicket.cs" />
+    <Compile Include="Models\CategoryModels.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CustomerAddressModels.cs" />
     <Compile Include="Models\CustomerModels.cs" />
     <Compile Include="Models\DepartmentModels.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\Division.cs" />
+    <Compile Include="Models\TicketTypeModels.cs" />
     <Compile Include="Models\UnionParishad.cs" />
     <Compile Include="Models\Upazila.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +299,16 @@
     <Content Include="Views\Department\AddDepartment.cshtml" />
     <Content Include="Views\Department\ViewDepartmentList.cshtml" />
     <Content Include="Views\Department\EditDepartment.cshtml" />
+    <Content Include="Views\TicketTypeModels\Create.cshtml" />
+    <Content Include="Views\TicketTypeModels\Delete.cshtml" />
+    <Content Include="Views\TicketTypeModels\Details.cshtml" />
+    <Content Include="Views\TicketTypeModels\Edit.cshtml" />
+    <Content Include="Views\TicketTypeModels\Index.cshtml" />
+    <Content Include="Views\CategoryModels\Create.cshtml" />
+    <Content Include="Views\CategoryModels\Delete.cshtml" />
+    <Content Include="Views\CategoryModels\Details.cshtml" />
+    <Content Include="Views\CategoryModels\Edit.cshtml" />
+    <Content Include="Views\CategoryModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906261400534_AddDepartmentModels.resx">
       <DependentUpon>201906261400534_AddDepartmentModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909161932597_AddCategoryModels.resx">
+      <DependentUpon>201909161932597_AddCategoryModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
